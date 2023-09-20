@@ -1,0 +1,22 @@
+{
+  "name": "mypackage",
+  "version": "1.0.0",
+  "description": "desc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terasa/images.git"
+  },
+  "keywords": [
+    "tmp"
+  ],
+  "author": "iksinski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/terasa/images/issues"
+  },
+  "homepage": "https://github.com/terasa/images#readme"
+}
