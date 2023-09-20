@@ -14,9 +14,5 @@
     "tmp"
   ],
   "author": "iksinski",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/terasa/images/issues"
-  },
-  "homepage": "https://github.com/terasa/images#readme"
+  "license": "ISC"
 }
