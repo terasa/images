@@ -1,0 +1,32 @@
+- pipeline: "multiline"
+  events:
+  - type: "PUSH"
+    refs:
+    - "refs/heads/master"
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "Build multi-arch Docker image"
+    type: "DOCKER_BUILD_MULTI_ARCH"
+    dockerfile_path: ""
+  - action: "Execute EOM"
+    type: "BUILD"
+    docker_image_name: "library/ubuntu"
+    docker_image_tag: "20.04"
+    execute_commands:
+    - "#!/bin/bash"
+    - "env=\"123\""
+    - "if [ -n \"$env\" ]; then"
+    - "newBundle=$(cat <<EOM"
+    - "{"
+    - "        \"version\": \"1\","
+    - "        \"changelog\": \"2\","
+    - "        \"deprecated\": false,"
+    - "        \"components\": $env"
+    - "}"
+    - "EOM"
+    - ")"
+    - "fi"
+    - "echo \"$newBundle\""
+    - "export newBundle"
+    - "printenv"
+    shell: "BASH"
